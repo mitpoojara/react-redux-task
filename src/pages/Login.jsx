@@ -36,7 +36,7 @@ const Login = () => {
 
       console.log("Login Success:", res.data);
 
-      // ✅ Redux store
+      
       dispatch(
         setUser({
           user: res.data,
@@ -45,13 +45,13 @@ const Login = () => {
         })
       );
 
-      // ✅ localStorage
+      // localStorage
       localStorage.setItem("accessToken", res.data.accessToken);
       localStorage.setItem("refreshToken", res.data.refreshToken);
 
       alert("Login Success ✅");
 
-      // ✅ redirect वापस add किया
+      // redirect 
       navigate("/products");
 
     } catch (error) {

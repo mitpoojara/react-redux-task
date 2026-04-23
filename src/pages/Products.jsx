@@ -20,7 +20,7 @@ const Products = () => {
     fetchProducts();
   }, [dispatch]);
 
-  // 🔹 Add / Update Product
+  //  Add / Update Product
   const handleAddOrUpdate = () => {
     if (!title || !price) {
       alert("Enter title & price");
@@ -28,14 +28,14 @@ const Products = () => {
     }
 
     if (editId) {
-      // 🔸 Update
+      //  Update
       const updated = products.map((item) =>
         item.id === editId ? { ...item, title, price } : item
       );
       dispatch(setProducts(updated));
       setEditId(null);
     } else {
-      // 🔸 Add
+      //  Add
       const newProduct = {
         id: Date.now(),
         title,
@@ -50,13 +50,13 @@ const Products = () => {
     setPrice("");
   };
 
-  // 🔹 Delete
+  // for  Delete
   const handleDelete = (id) => {
     const updated = products.filter((item) => item.id !== id);
     dispatch(setProducts(updated));
   };
 
-  // 🔹 Edit
+  // for Edit
   const handleEdit = (item) => {
     setTitle(item.title);
     setPrice(item.price);
@@ -69,7 +69,7 @@ const Products = () => {
 
       <p>Total Products: {products.length}</p>
 
-      {/* 🔥 FORM */}
+      {/* FORM SHOW */}
       <div style={{ marginBottom: "20px" }}>
         <input
           placeholder="Title"
@@ -96,7 +96,7 @@ const Products = () => {
         </button>
       </div>
 
-      {/* 🔥 TABLE */}
+      {/* TABLE SHOW */}
       <table border="1" cellPadding="10">
         <thead>
           <tr>
